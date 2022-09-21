@@ -2,9 +2,8 @@
 def uppercase(str):
     strUpper = ""
     for i in range(len(str)):
-        if (ord(str[i]) > 96  and ord(str[i]) < 123):
+        if (ord(str[i]) > 96 and ord(str[i]) < 123):
             strUpper = strUpper + chr(ord(str[i]) - 32)
-        else: 
+        else:
             strUpper = strUpper + chr(ord(str[i]))
     print("{0}".format(strUpper))
-    

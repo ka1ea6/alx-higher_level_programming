@@ -6,6 +6,6 @@ if number > 0:
     string = string + "positive"
 elif number == 0:
     string = string + "zero"
-else: 
+else:
     string = string + "negative"
 print(f"{string}")
