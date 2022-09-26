@@ -14,9 +14,13 @@ if __name__ == "__main__":
     b = int(argv[3])
     if(op == "+"):
         print("{0} + {1} = {2}".format(a, b, add(a, b)))
+        exit(0)
     elif(op == "-"):
         print("{0} - {1} = {2}".format(a, b, sub(a, b)))
+        exit(0)
     elif(op == "*"):
         print("{0} * {1} = {2}".format(a, b, mul(a, b)))
+        exit(0)
     elif(op == "/"):
         print("{0} / {1} = {2}".format(a, b, div(a, b)))
+        exit(0)
