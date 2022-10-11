@@ -2,12 +2,13 @@
 
 '''module for writing a class that defines a square'''
 
+
 class Square:
     '''a class representing a square'''
 
     def __init__(self, size=0):
         ''' initializes a square:
-        
+
         Args:
             size (int) : size of the square.
         '''
