@@ -3,6 +3,8 @@ def safe_print_list_integers(my_list=[], x=0):
     try:
         i = 0
         j = 0
+        if len(my_list) == 0:
+            return 0
         while(my_list[i - 1] and i < x):
             i += 1
         ints = []
