@@ -3,8 +3,6 @@ def safe_print_list_integers(my_list=[], x=0):
     try:
         i = 0
         j = 0
-        if len(my_list) == 0:
-            return 0
         while(my_list[i - 1] and i < x):
             i += 1
         ints = []
@@ -19,6 +17,8 @@ def safe_print_list_integers(my_list=[], x=0):
     except IndexError:
         i -= 1
         ints = []
+        if len(my_list) == 0:
+            return 0
         for k in range(i):
             if isinstance(my_list[k], int):
                 ints.append(my_list[k])
