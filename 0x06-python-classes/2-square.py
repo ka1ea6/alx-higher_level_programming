@@ -7,8 +7,8 @@ class Square:
     '''a class that defines a square based on the passed size'''
 
     def __init__(self, size=0):
-        '''Initializes a new Square. 
-        
+        '''Initializes a new Square.
+
         Args:
             size (int): The size of the new square
         '''
