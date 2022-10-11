@@ -58,6 +58,8 @@ class Square:
             print("")
         else:
             a, b = self.__position
+            for _ in range(b):
+                print("")
             for i in range(self.__size):
                 for _ in range(a):
                     print(" ", end="")
