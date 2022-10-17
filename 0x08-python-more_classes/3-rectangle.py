@@ -72,3 +72,15 @@ class Rectangle:
         Public method to return the rectangle perimeter
         '''
         return (2 * self.__height) + (2 * self.__width)
+
+    def __str__(self):
+        '''
+        Public method to return the rectangle represented as #
+        '''
+        string = ""
+        for i in range(self.__height):
+            for _ in range(self.__width):
+                string += "#"
+            if i < self.__height - 1:
+                string += '\n'
+        return string
