@@ -5,7 +5,7 @@
 class Rectangle:
     '''Class for defining a rectangle'''
 
-    def __init__(self, width, height):
+    def __init__(self, width=0, height=0):
         '''
         Class used for instantiation of object
 
@@ -60,3 +60,15 @@ class Rectangle:
 
         self.__height = value
         return
+
+    def area(self):
+        '''
+        Public method to return the rectangle area
+        '''
+        return self.__height * self.__width
+
+    def perimeter(self):
+        '''
+        Public method to return the rectangle perimeter
+        '''
+        return (2 * self.__height) + (2 * self.__width)
