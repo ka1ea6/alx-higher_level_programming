@@ -78,8 +78,9 @@ class Rectangle:
         Public method to return the rectangle represented as #
         '''
         string = ""
-        for i in range(self.__height):
-            string += "#" * self.__width
-            if i < self.__height - 1:
-                string += '\n'
+        if not self.__width == 0 and not self.__height == 0:
+            for i in range(self.__height):
+                string += "#" * self.__width
+                if i < self.__height - 1:
+                    string += '\n'
         return string
