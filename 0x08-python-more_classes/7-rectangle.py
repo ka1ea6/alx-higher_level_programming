@@ -84,7 +84,7 @@ class Rectangle:
         string = ""
         if not self.__width == 0 and not self.__height == 0:
             for i in range(self.__height):
-                string += str(Rectangle.print_symbol) * self.__width
+                string += str(self.print_symbol) * self.__width
                 if i < self.__height - 1:
                     string += '\n'
         return string
