@@ -1,0 +1,33 @@
+"""
+
+================================
+How to use 5-text_indentation.py
+================================
+
+This module defines a function used to indent text based on the characters '.', '?' ':' ```text_indentation(text)```
+
+
+Usage
+=====
+
+```text_indentation(text)``` prints a text spaced out based on the characters '.', '?' ':'
+
+::
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+when a text is passed to the function the function will print a spaced out result
+
+>>> text_indentation("Hello. World")
+Hello.
+<BLANKLINE>
+World
+
+Exceptions
+==========
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+"""

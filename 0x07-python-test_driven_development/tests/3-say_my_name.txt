@@ -1,0 +1,44 @@
+"""
+
+===========================
+How to Use 3-say_my_name.py
+===========================
+
+This module defines a function used to print the full name given the first and last name ``say_my_name(first_name, last_name="")``.
+
+Usage
+=====
+
+```say_my_name(first_name, last_name="")``` prints the full name given the first and last name. Returns None.
+
+::
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+When a string is passed as a first and last name the full name is printed
+
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+if the last name is not passed it is given the default value of ''
+
+>>> say_my_name("Bob")
+My name is Bob 
+
+
+Exceptions
+==========
+ 
+If the argument passed to first_name is not a string a TypeError is raised
+
+>>> say_my_name(1, "Bob")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+If the second argument passed is not a string a TypeError is raised
+
+>>> say_my_name("Bob", 1)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+"""

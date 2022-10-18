@@ -1,0 +1,75 @@
+"""
+
+==============================
+How to use 2-matrix_divided.py
+==============================
+
+This module defines a function used to divide each elements of a matrix ``matrix_divided(matrix, div)``.
+
+Usage
+=====
+
+```matrix_divided(matrix, div)``` returns a new matrix with each of the elements divided by div.
+
+::
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+When a list containing a list (matrix) of integers is passed each element is divided by the
+divisor and returned in a new matrix of integers is returned
+
+
+>>> matrix_divided( [[1, 2, 3],[4, 5, 6]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+
+Exceptions
+==========
+
+If the passed matrix is not of type list a TypeError is raised
+
+>>> matrix_divided("a", 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided(1, 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+If the passed matrix is a list but the elements of the matrix are not lists
+a TypeError is raised
+
+>>> matrix_divided(["a", "b"], 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([1,23], 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+If the passed matrix contains a list of a list but the inner list does not contain
+ints or floats a TypeError is raised
+
+>>> matrix_divided([["a", "b"], ["e","f"]], 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+If each row of the matrix is not of the same size a TypeError is raised
+
+>>> matrix_divided([[1,2,2],[3,4]], 2)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+If the divisor is not an int or a float a TypeError is raised
+
+>>> matrix_divided([[1,2,3], [4,5,6]], "a")
+Traceback (most recent call last):
+TypeError: div must be a number
+
+If the divisor is less than 0 a ZeroDivisionError is raised
+
+>>> matrix_divided([[1,2,3],[4,5,6]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+"""
