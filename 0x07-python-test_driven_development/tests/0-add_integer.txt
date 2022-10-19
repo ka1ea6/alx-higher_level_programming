@@ -69,5 +69,16 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 TypeError: a must be an integer
 
+The function raises a ValueError when encountering NaN numbers
+
+>>> add_integer(float("nan"))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+Also, the function will fail if infinity is provided
+
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
 
 """
