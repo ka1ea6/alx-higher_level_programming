@@ -24,7 +24,7 @@ When an integer is passed to size a square with elements '#' is printed to stdou
 ####
 
 >>> print_square(0)
-<BLANKLINE>
+
 >>> print_square(1)
 #
 
