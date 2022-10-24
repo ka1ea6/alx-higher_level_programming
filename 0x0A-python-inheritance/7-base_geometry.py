@@ -22,7 +22,7 @@ class BaseGeometry:
             @name: name of the value to be checked
             @value: value to be checked
         '''
-        if not isinstance(value, int):
+        if value.__class__.__name__ != int.__name__:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
