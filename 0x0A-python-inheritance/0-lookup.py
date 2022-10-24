@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Module defining a lookup function used to list all attributes 
+'''Module defining a lookup function used to list all attributes
 and methods of an object
 '''
 
