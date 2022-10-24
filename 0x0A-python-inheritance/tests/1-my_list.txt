@@ -1,0 +1,57 @@
+"""
+
+=======================
+How to use 1-my_list.py
+=======================
+
+This module defines a class MyList that inherits from the list class `MyList(list)`
+it adds the functionality of printing a list in ascending order to the list base class.
+
+
+Usage
+=====
+
+
+```my_list = MyList()``` will instantiate an object based on the lass MyList that inherits from the list base class
+
+we will be able to use all functions that are used on a list object on my_list since it inherits from the list base class
+
+Additionally we can use the ```my_list.print_sorted()``` method to print a sorted array
+
+
+>>> MyList = __import__('1-my_list').MyList
+
+
+instantiation
+=============
+
+The object does not accept any parameters upon instantiation
+
+>>> my_list = MyList();
+
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+
+
+we can print all the elements of the list
+
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+
+we can now use the print sorted function to print a sorted function without affecting the original list
+
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+
+we can check if the function changed the list
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+
+
+"""
