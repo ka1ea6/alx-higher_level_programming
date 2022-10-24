@@ -1,0 +1,60 @@
+"""
+
+==============================
+How to use 7-base_geometry.txt
+==============================
+
+This module defines a class BaseGeometry ```class BaseGeometry```
+
+
+Usage
+=====
+
+
+We must first import the class
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+We can instantiate an object useing the imported class
+
+>>> bg = BaseGeometry()
+
+we can use the integer_validator method to check if values are of type int and greater than 0
+
+>>> bg.integer_validator("my_int", 12)
+
+
+Exceptions
+==========
+
+The class has an unimplemented function area() that raises an exception
+
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+The integer_validator method will raise a TypeError if the value is not of type int
+
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+The integer_validator method will raise a ValueError if the value is less than or equal to 0
+
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+ValueError: distance must be greater than 0
+
+If the value is not provide a TypeError is raised
+
+>>> bg.integer_validator("name")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+If no argument is provided a TypeError is raised
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+"""
