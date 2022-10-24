@@ -1,9 +1,9 @@
-#!/usr/bin/python3
-'''Module to define a function to check if
-an objec is an exact instance of a class'''
+#!/usr/bin/pyhton3
+'''Module for defining a function that checks if
+ an object is an instance of a class'''
 
 
-def is_same_class(obj, a_class):
+def is_kind_of_class(obj, a_class):
     '''Function to test if an object is an instance of a class
 
     Args:
@@ -11,4 +11,5 @@ def is_same_class(obj, a_class):
         @a_class: class to be checked
         Return: True if class is exact instance, false otherwise.
     '''
-    return type(obj).__name__ == a_class.__name__
+    
+    return isinstance(obj, a_class)
