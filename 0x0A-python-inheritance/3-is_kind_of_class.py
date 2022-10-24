@@ -11,5 +11,5 @@ def is_kind_of_class(obj, a_class):
         @a_class: class to be checked
         Return: True if obj is instance of a_class, false otherwise.
     '''
-    
+
     return isinstance(obj, a_class)
