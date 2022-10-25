@@ -29,6 +29,16 @@ The object does not accept any parameters upon instantiation
 
 >>> my_list = MyList();
 
+
+If an empty list is passed an empty list is returned
+
+>>> print(my_list)
+[]
+
+>>> my_list.print_sorted()
+[]
+
+
 >>> my_list.append(1)
 >>> my_list.append(4)
 >>> my_list.append(2)
@@ -41,7 +51,6 @@ we can print all the elements of the list
 >>> print(my_list)
 [1, 4, 2, 3, 5]
 
-
 we can now use the print sorted function to print a sorted function without affecting the original list
 
 >>> my_list.print_sorted()
@@ -51,6 +60,28 @@ we can now use the print sorted function to print a sorted function without affe
 we can check if the function changed the list
 >>> print(my_list)
 [1, 4, 2, 3, 5]
+
+
+>>> del my_list
+
+The function will also work with a list containing an unordered list with negative numbers
+
+
+>>> my_list = MyList()
+
+
+>>> my_list.append(3)
+>>> my_list.append(1)
+>>> my_list.append(-1)
+>>> my_list.append(4)
+>>> my_list.append(-5)
+
+>>> print(my_list)
+[3, 1, -1, 4, -5]
+
+>>> my_list.print_sorted()
+[-5, -1, 1, 3, 4]
+
 
 
 
