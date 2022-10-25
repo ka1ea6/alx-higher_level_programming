@@ -39,6 +39,26 @@ The integer_validator method will raise a TypeError if the value is not of type 
 Traceback (most recent call last):
 TypeError: name must be an integer
 
+>>> bg.integer_validator("age", (4,))
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", [3])
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", [3, 4])
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", True)
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", None)
+Traceback (most recent call last):
+TypeError: age must be an integer
+
 The integer_validator method will raise a ValueError if the value is less than or equal to 0
 
 >>> bg.integer_validator("distance", -4)
