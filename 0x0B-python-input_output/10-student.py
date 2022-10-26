@@ -14,8 +14,8 @@ class Student:
     def to_json(self, attrs=None):
         '''function to retrieve a dictionary representation
         of a Student instance'''
-
-        if isinstance(attrs, list) and len(attrs) > 0 and isinstance(attrs[0], str):
+        instanceCheck = isinstance(attrs, list) and len(attrs) > 0
+        if instanceCheck and isinstance(attrs[0], str):
             res = {}
             for i in attrs:
                 if i in self.__dict__.keys():
