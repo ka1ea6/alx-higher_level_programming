@@ -15,10 +15,12 @@ class Student:
         '''function to retrieve a dictionary representation
         of a Student instance'''
 
-        if isinstance(attrs, list) and isinstance(attrs[0], str):
+        if isinstance(attrs, list) and len(attrs) > 0 and isinstance(attrs[0], str):
             res = {}
             for i in attrs:
                 if i in self.__dict__.keys():
                     res[i] = self.__dict__[i]
             return res
+        if isinstance(attrs, list) and len(attrs) == 0:
+            return {}
         return self.__dict__
