@@ -83,8 +83,9 @@ class Rectangle(Base):
 
     def display(self):
         '''Method to print the rectangle instance with '#' characters'''
-        [print() for _ in range(self.y)]
-        [print(' ' * self.x, '#' * self.width) for _ in range(self.height)]
+        if self.y > 0:
+            [print() for _ in range(self.y)]
+        [print(' ' * self.x, '#' * self.width) if self.x > 0 else  print('#' * self.width) for _ in range(self.height)]
 
     def update(self, *args, **kwargs):
         '''public method to assign an argument to the attributes'''
