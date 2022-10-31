@@ -125,7 +125,7 @@ class Rectangle(Base):
     def __str__(self):
         '''Dunder Method to return a stirng representing the object at hand'''
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y}"
-                " - {self.width}/{self.height}")
+                f" - {self.width}/{self.height}")
 
     def to_dictionary(self):
         '''Public method to return the dictionary
