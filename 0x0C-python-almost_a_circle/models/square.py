@@ -11,17 +11,16 @@ class Square(Rectangle):
         '''Dunder method for instantiating an object'''
 
         super().__init__(size, size, x, y, id)
-    
-       
-    def __str__(self) :
+
+    def __str__(self):
         '''Funciton to return a stirng representing the object at hand'''
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-    
+
     @property
     def size(self):
         '''public method for getting the size of the square'''
         return self.height
-    
+
     @size.setter
     def size(self, value):
         '''public method for setting the size of the square'''
@@ -50,7 +49,7 @@ class Square(Rectangle):
         elif key == 3 or key == "y":
             self.y = value
             return
-    
+
     def to_dictionary(self):
         return {
             "id": self.id,
