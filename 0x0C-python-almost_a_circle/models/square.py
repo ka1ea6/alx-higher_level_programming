@@ -9,7 +9,6 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         '''Dunder method for instantiating an object'''
-
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -51,6 +50,8 @@ class Square(Rectangle):
             return
 
     def to_dictionary(self):
+        '''Public method to return the dictionary
+         representation of a Rectangle'''
         return {
             "id": self.id,
             "x": self.x,
