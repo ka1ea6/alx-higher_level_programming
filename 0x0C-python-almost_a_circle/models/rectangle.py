@@ -26,7 +26,7 @@ class Rectangle(Base):
     def height(self, value):
         '''Method to set the value of the rectangle instance'''
         self.__check_type_int("height", value)
-        self.__check_value("height", value, -1)
+        self.__check_value("height", value, 0)
         self.__height = value
 
     @property
@@ -38,7 +38,7 @@ class Rectangle(Base):
     def width(self, value):
         '''Method to set the value of the rectangle instance'''
         self.__check_type_int("width", value)
-        self.__check_value("width", value, -1)
+        self.__check_value("width", value, 0)
         self.__width = value
 
     @property
