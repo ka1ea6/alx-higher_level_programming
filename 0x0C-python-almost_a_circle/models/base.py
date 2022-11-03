@@ -31,7 +31,7 @@ class Base:
     def save_to_file(cls, list_objs):
         '''Class method to write the json string representation
          of list_objs to a file'''
-        with open(f"{cls.__name__}12.json", "w", encoding="utf-8") as f:
+        with open(f"{cls.__name__}.json", "w", encoding="utf-8") as f:
             new_list = []
             if isinstance(list_objs, list):
                 for obj in list_objs:
