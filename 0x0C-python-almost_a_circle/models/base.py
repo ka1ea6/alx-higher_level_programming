@@ -60,11 +60,14 @@ class Base:
         '''Class method to load an instance from a file'''
         res = []
         instances = []
-        with open(f"{cls.__name__}.json", "r", encoding="utf-8") as f:
-            res = Base.from_json_string(f.readline())
-        for curr in res:
-            instances.append(cls.create(**curr))
-        return instances
+        try:
+            with open(f"{cls.__name__}.json", "r", encoding="utf-8") as f:
+                res = Base.from_json_string(f.readline())
+            for curr in res:
+                instances.append(cls.create(**curr))
+            return instances
+        except FileNotFoundError:
+            return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
