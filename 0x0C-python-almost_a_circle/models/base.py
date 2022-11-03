@@ -76,20 +76,31 @@ class Base:
         square_header = ("id", "size", "x", "y")
         csv_body = []
         with open(f"{cls.__name__}.csv", mode='w', encoding="utf-8") as f:
-            for obj in list_objs:
-                new_dict = obj.__class__.to_dictionary(obj)
-                csv_body.append(new_dict)
-            if cls.__name__ == "Rectangle":
-                writer = csv.DictWriter(f, fieldnames=rect_header,
-                                        lineterminator="\n")
-            elif cls.__name__ == "Square":
-                writer = csv.DictWriter(f, fieldnames=square_header,
-                                        lineterminator="\n")
+            if isinstance(list_objs, list):
+                for obj in list_objs:
+                    new_dict = obj.__class__.to_dictionary(obj)
+                    csv_body.append(new_dict)
+                if cls.__name__ == "Rectangle":
+                    writer = csv.DictWriter(f, fieldnames=rect_header,
+                                            lineterminator="\n")
+                elif cls.__name__ == "Square":
+                    writer = csv.DictWriter(f, fieldnames=square_header,
+                                            lineterminator="\n")
+                else:
+                    writer = csv.DictWriter(
+                        f, fieldnames=[], lineterminator="\n")
+                    writer.writeheader()
+                    return
 
-            writer.writeheader()
-            writer.writerows(csv_body)
+                # writer.writeheader()
+                writer.writerows(csv_body)
+            else:
+                writer = csv.DictWriter(
+                    f, fieldnames=[], lineterminator="")
+                writer.writerow(dict([]))
+                return
 
-    @classmethod
+    @ classmethod
     def load_from_file_csv(cls):
         '''Class method to load the instance variables from a csv file'''
         instances = []

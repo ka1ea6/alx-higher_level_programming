@@ -91,24 +91,12 @@ class Rectangle(Base):
             [print('#', end="") for wid in range(self.width)]
             print()
 
-        # [print(' ' * self.x, '#' * self.width) if self.x > 0
-        #     else print('#' * self.width,) for _ in range(self.height)]
-
     def update(self, *args, **kwargs):
         '''public method to assign an argument to the attributes'''
-        # action_obj = {
-        #     0: self.id,
-        #     1: self.width,
-        #     2: self.height,
-        #     3: self.x,
-        #     4: self.y
-        # }
         for index, value in enumerate(args):
             self.__set_attribute(index, value)
         for key, val in kwargs.items():
             self.__set_attribute(key, val)
-            # print("in here ", index, action_obj[index])
-            # action_obj[index] = value
 
     def __set_attribute(self, key, value):
         '''Private method used as a helper to the update method'''
