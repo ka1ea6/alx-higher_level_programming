@@ -50,7 +50,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         '''Class method to create an instance from a given dictionary'''
-        newRect = cls(0, 0)
+        newRect = cls(1, 1)
         # print("here", newRect)
         newRect.update(**dictionary)
         return newRect
