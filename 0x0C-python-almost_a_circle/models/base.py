@@ -24,7 +24,7 @@ class Base:
         '''Static method to return a JSON string representation
          of list_dictionaries'''
         if list_dictionaries is None or len(list_dictionaries) < 1:
-            return []
+            return json.dumps([])
         return json.dumps(list_dictionaries)
 
     @classmethod
