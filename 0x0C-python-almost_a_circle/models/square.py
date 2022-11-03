@@ -40,7 +40,7 @@ class Square(Rectangle):
             self.id = value
             return
         elif key == 1 or key == "size":
-            self.width = value
+            self.size = value
             return
         elif key == 2 or key == "x":
             self.x = value
@@ -55,6 +55,6 @@ class Square(Rectangle):
         return {
             "id": self.id,
             "x": self.x,
-            "size": self.width,
+            "size": self.size,
             "y": self.y
         }

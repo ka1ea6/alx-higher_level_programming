@@ -9,16 +9,16 @@ if __name__ == "__main__":
     print(s1.area())
     s1.display()
 
-    print("---")
+    # print("---")
 
-    s2 = Square(2, 2)
-    print(s2)
-    print(s2.area())
-    s2.display()
+    # s2 = Square(2, 2)
+    # print(s2)
+    # print(s2.area())
+    # s2.display()
 
-    print("---")
+    # print("---")
 
-    s3 = Square(3, 1, 3)
-    print(s3)
-    print(s3.area())
-    s3.display()
+    # s3 = Square(3, 1, 3)
+    # print(s3)
+    # print(s3.area())
+    # s3.display()
