@@ -9,7 +9,7 @@ if len(sys.argv) > 3:
     passwd = sys.argv[2]
     db_name = sys.argv[3]
 
-    db = MySQLdb.connect(host="127.0.0.1",
+    db = MySQLdb.connect(host="localhost",
                          user=user_name,
                          passwd=passwd,
                          db=db_name)
