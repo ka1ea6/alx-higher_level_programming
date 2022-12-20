@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 '''Python script for connecting to a database and executing a
 fetch query'''
 import sys
