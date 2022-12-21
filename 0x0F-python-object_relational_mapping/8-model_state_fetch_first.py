@@ -9,20 +9,25 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-if len(sys.argv) > 3:
-    user_name = sys.argv[1]
-    passwd = sys.argv[2]
-    db_name = sys.argv[3]
+def get_first():
+    '''Function to get the first state in states table'''
+    if len(sys.argv) > 3:
+        user_name = sys.argv[1]
+        passwd = sys.argv[2]
+        db_name = sys.argv[3]
 
-    engine = create_engine(f"mysql+mysqldb:\
-//{user_name}:{passwd}@localhost:3306/{db_name}")
+        engine = create_engine(f"mysql+mysqldb:\
+    //{user_name}:{passwd}@localhost:3306/{db_name}")
 
-    Session = sessionmaker(bind=engine)
-    session = Session()
+        Session = sessionmaker(bind=engine)
+        session = Session()
 
-    for instance in session.query(State).order_by(State.id).limit(1):
-        print(instance)
+        for instance in session.query(State).order_by(State.id).limit(1):
+            print(instance)
 
-else:
-    print(f"Usage: ./7-model_state_fetch_all.py \
-    <mysql_username> <mysql_password> <database_name>")
+    else:
+        print(f"Usage: ./7-model_state_fetch_all.py \
+        <mysql_username> <mysql_password> <database_name>")
+
+if __name__ == "__main__":
+    get_first()
