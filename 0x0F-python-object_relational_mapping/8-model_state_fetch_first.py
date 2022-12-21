@@ -17,7 +17,7 @@ def get_first():
         db_name = sys.argv[3]
 
         engine = create_engine(f"mysql+mysqldb:\
-    //{user_name}:{passwd}@localhost:3306/{db_name}")
+//{user_name}:{passwd}@localhost:3306/{db_name}")
 
         Session = sessionmaker(bind=engine)
         session = Session()
@@ -28,6 +28,7 @@ def get_first():
     else:
         print(f"Usage: ./7-model_state_fetch_all.py \
         <mysql_username> <mysql_password> <database_name>")
+
 
 if __name__ == "__main__":
     get_first()
