@@ -16,3 +16,6 @@ class State(Base):
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, nullable=False, unique=True)
     name = Column(String(length=128))
+
+    def __repr__(self):
+        return f"{self.id}: {self.name}"
