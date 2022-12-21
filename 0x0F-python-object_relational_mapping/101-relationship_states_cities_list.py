@@ -24,17 +24,13 @@ if __name__ == "__main__":
 
         Base.metadata.create_all(engine)
 
-        res = session.query(State, City)\
-            .filter(City.state_id == State.id).all()
-        res_dict = {f"{key}": [] for key, _ in res}
-        for instance in res:
-            res_dict[f"{instance[0]}"].append(instance[1])
+        res = session.query(State).outerjoin(City)\
+            .order_by(State.id, City.id).all()
 
-        for state in res_dict:
-            print(state)
-            for city in res_dict[state]:
-                print(f"\t{city}")
-
+        for state in res:
+            print(f"{state.id}: {state.name}")
+            for city in state.cities:
+                print(f"\t{city.id}: {city.name}")
     else:
         print(f"Usage: ./12-model_state_update_id_2.py \
         <mysql_username> <mysql_password> <database_name>")
