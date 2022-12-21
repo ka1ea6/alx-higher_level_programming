@@ -5,7 +5,7 @@ sqlalchemy ORM.'''
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, Integer
-
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
@@ -19,3 +19,5 @@ class State(Base):
 
     def __repr__(self):
         return f"{self.id}: {self.name}"
+
+State.cities = relationship('City', back_populates="state")
