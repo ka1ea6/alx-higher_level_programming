@@ -5,24 +5,25 @@ hbtn+_0e_4_usa'''
 import sys
 import MySQLdb
 
-if len(sys.argv) > 3:
+if len(sys.argv) > 4:
     user_name = sys.argv[1]
     passwd = sys.argv[2]
     db_name = sys.argv[3]
+    state_name = sys.argv[4]
     db = MySQLdb.connect(host="localhost",
                          user=user_name,
                          passwd=passwd,
                          db=db_name)
     cur = db.cursor()
-    query = "SELECT cities.id, cities.name, states.name\
+    query = "SELECT cities.name\
     FROM cities LEFT JOIN states ON cities.state_id = states.id \
-     ORDER BY %s;"
-    cur.execute(query, ("cities.id",))
+     WHERE states.name = %s;"
+    cur.execute(query, (state_name,))
     states = cur.fetchall()
     for row in states:
-        print(row)
+        print(row[0], end=", ")
     cur.close()
     db.close()
 else:
-    print(f"Usage: ./1-filter_states.py \
-    <mysql_username> <mysql_password> <database_name>")
+    print(f"Usage: ./5-filter_cities.py \
+    <mysql_username> <mysql_password> <database_name> <state_name>")
