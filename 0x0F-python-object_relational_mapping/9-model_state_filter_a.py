@@ -8,7 +8,7 @@ from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-    
+
 if __name__ == "__main__":
     if len(sys.argv) > 3:
         user_name = sys.argv[1]
@@ -21,7 +21,8 @@ if __name__ == "__main__":
         Session = sessionmaker(bind=engine)
         session = Session()
 
-        state = session.query(State).order_by(State.id).filter(State.name.like('%a%'))
+        state = session.query(State).order_by(State.id)\
+                                    .filter(State.name.like('%a%'))
 
         for instance in state:
             print(instance)
@@ -29,5 +30,3 @@ if __name__ == "__main__":
     else:
         print(f"Usage: ./7-model_state_fetch_all.py \
         <mysql_username> <mysql_password> <database_name>")
-
-
