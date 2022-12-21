@@ -28,5 +28,5 @@ if __name__ == "__main__":
             print(instance)
 
     else:
-        print(f"Usage: ./7-model_state_fetch_all.py \
+        print(f"Usage: ./9-model_state_filter_a.py \
         <mysql_username> <mysql_password> <database_name>")
