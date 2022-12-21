@@ -23,7 +23,7 @@ def get_first():
         session = Session()
 
         state = session.query(State).order_by(State.id).first()
-        
+
         print("Nothing" if not state else state)
 
     else:
