@@ -26,7 +26,7 @@ fs.readFile(input1, { encoding: 'utf-8' }, (err, input1Data) => {
   if (!err) {
     fs.readFile(input2, { encoding: 'utf-8' }, (err, input2Data) => {
       if (!err) {
-        fs.writeFile(output, `${input1Data}\n${input2Data}`, { encoding: 'utf-8' }, (err) => {
+        fs.writeFile(output, `${input1Data}${input2Data}`, { encoding: 'utf-8' }, (err) => {
           if (err) console.error('Error: ', err);
         });
       } else console.error('Error: ', err);
