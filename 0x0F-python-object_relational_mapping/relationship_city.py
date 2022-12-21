@@ -3,7 +3,7 @@
 sqlalchemy ORM.'''
 
 
-from model_state import Base
+from relationship_state import Base
 from sqlalchemy import Column, String, Integer, ForeignKey
 from sqlalchemy.orm import relationship
 
@@ -21,4 +21,4 @@ class City(Base):
     state = relationship("State", back_populates="cities")
 
     def __repr__(self):
-        return f"{self.id} {self.name}"
+        return f"{self.id}: {self.name}"

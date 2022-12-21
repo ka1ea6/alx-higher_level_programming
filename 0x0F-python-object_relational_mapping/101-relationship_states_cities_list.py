@@ -24,14 +24,10 @@ if __name__ == "__main__":
 
         Base.metadata.create_all(engine)
 
-        session.add(State(name="California"))
-
-        session.commit()
-        cali = session.query(State).filter(State.name == "California").first()
-
-        session.add(City(name="San Francisco", state_id=cali.id))
-
-        session.commit()
+        for state in session.query(State):
+            print(state)
+            for city in session.query(City).filter(City.state_id == state.id):
+                print(f"\t{city}")
 
     else:
         print(f"Usage: ./12-model_state_update_id_2.py \
