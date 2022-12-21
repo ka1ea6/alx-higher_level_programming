@@ -6,7 +6,7 @@ letter a from the database hbtn_0e_6_usa'''
 import sys
 from model_state import Base, State
 from model_city import City
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
@@ -23,13 +23,13 @@ if __name__ == "__main__":
         session = Session()
 
         Base.metadata.create_all(engine)
-        
+
         session.add(State(name="California"))
 
         session.commit()
         cali = session.query(State).filter(State.name == "California").first()
 
-        session.add(City(name="San Francisco", state_id = cali.id))
+        session.add(City(name="San Francisco", state_id=cali.id))
 
         session.commit()
 
