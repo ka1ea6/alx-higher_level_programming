@@ -22,8 +22,9 @@ def get_first():
         Session = sessionmaker(bind=engine)
         session = Session()
 
-        for instance in session.query(State).order_by(State.id).limit(1):
-            print(instance)
+        state = session.query(State).order_by(State.id).first()
+        
+        print("Nothing" if not state else state)
 
     else:
         print(f"Usage: ./7-model_state_fetch_all.py \
