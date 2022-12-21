@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-'''Script that lists all state objects form the
-database hbtn_0e_6_usa'''
+'''Script that prints the first state object from
+the database hbtn_0e_6_usa'''
 
 
 import sys
@@ -20,7 +20,7 @@ if len(sys.argv) > 3:
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for instance in session.query(State).order_by(State.id):
+    for instance in session.query(State).order_by(State.id).limit(1):
         print(instance)
 
 else:
