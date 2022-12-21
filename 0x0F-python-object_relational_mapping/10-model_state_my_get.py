@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
         state = session.query(State).order_by(State.id)\
                                     .filter(State.name == state_name).first()
-    
+
         print("Not found" if not state else state.id)
     else:
         print(f"Usage: ./10-model_state_my_get.py \
