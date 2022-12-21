@@ -34,11 +34,6 @@ if __name__ == "__main__":
             print(state)
             for city in res_dict[state]:
                 print(f"\t{city}")
-        # for state in session.query(State):
-        #     print(state)
-        #     for city in session.query(City).\
-        #       filter(City.state_id == state.id):
-        #         print(f"\t{city}")
 
     else:
         print(f"Usage: ./12-model_state_update_id_2.py \
