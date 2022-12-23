@@ -16,7 +16,8 @@ if len(sys.argv) > 4:
                          passwd=passwd,
                          db=db_name)
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name = '{0}';".format(state_name)
+    query = "SELECT * FROM states WHERE name LIKE BINARY '{0}';".format(
+        state_name)
     cur.execute(query)
     states = cur.fetchall()
     for row in states:
