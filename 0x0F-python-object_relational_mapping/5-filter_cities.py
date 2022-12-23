@@ -20,11 +20,9 @@ if len(sys.argv) > 4:
      WHERE states.name = %s;"
     cur.execute(query, (state_name,))
     states = cur.fetchall()
-    for row in states:
-        if states[len(states) - 1] == row:
-            print(row[0], end=" ")
-            continue
-        print(row[0], end=", ")
+
+    print(", ".join([state[0] for state in states]))
+
     cur.close()
     db.close()
 else:
