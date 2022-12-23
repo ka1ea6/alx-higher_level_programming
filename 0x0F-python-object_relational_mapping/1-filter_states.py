@@ -14,7 +14,7 @@ if len(sys.argv) > 3:
                          passwd=passwd,
                          db=db_name)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%';")
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%';")
     states = cur.fetchall()
     for row in states:
         print(row)

@@ -18,11 +18,12 @@ if __name__ == "__main__":
 
         engine = create_engine(f"mysql+mysqldb:\
 //{user_name}:{passwd}@localhost:3306/{db_name}")
+        
+        Base.metadata.create_all(engine)
 
         Session = sessionmaker(bind=engine)
         session = Session()
 
-        Base.metadata.create_all(engine)
 
         res = session.query(State).outerjoin(City)\
             .order_by(State.id, City.id).all()
