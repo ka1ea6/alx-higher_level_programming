@@ -24,4 +24,4 @@ class State(Base):
         return f"{self.id}: {self.name}"
 
 
-State.cities = relationship('City', back_populates="state")
+# State.cities = relationship('City', back_populates="state")
