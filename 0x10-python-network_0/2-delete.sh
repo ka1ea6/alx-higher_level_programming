@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Bash script that sends DELETE request to the
 # URL passed as the first argument
 if [ $# -lt 1 ];

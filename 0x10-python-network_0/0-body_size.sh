@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Script to take in a URL and send a request to that URL
 if [ $# -lt 1 ];
 then

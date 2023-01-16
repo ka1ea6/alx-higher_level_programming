@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Bash script that takes in a URL sends a get request
 # and displays the body of the response
 if [ $# -lt 1 ];
