@@ -10,4 +10,4 @@ if __name__ == "__main__":
     url = sys.argv[1]
     req = urllib.request.Request(url)
     with urllib.request.urlopen(req) as res:
-        print(res.info()['X-Request-Id'])
+        print(res.info().get("X-Request-id"))
