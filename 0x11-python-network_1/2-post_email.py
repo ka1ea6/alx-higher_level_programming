@@ -11,4 +11,4 @@ email = sys.argv[2]
 req = urllib.request.Request(url, email=email)
 with urllib.request.urlopen(req) as res:
     response_page = res.read()
-    print(response_page.decode("ascii"))
+    print(response_page.decode("utf-8"))
