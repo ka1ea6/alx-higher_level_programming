@@ -11,4 +11,7 @@ if __name__ == "__main__":
 
     res = requests.get(url)
 
-    print(f"Error code: {res.status_code}")
+    if res.ok:
+        print(res.text)
+    else:
+        print(f"Error code: {res.status_code}")
