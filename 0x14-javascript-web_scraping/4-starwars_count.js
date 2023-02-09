@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const request = require("request");
+const request = require('request');
 
 const uri = process.argv[2];
 
@@ -9,9 +9,9 @@ request.get(uri, (err, res, body) => {
 
   let movieCount = 0;
 
-  for (let episode of movies) {
-    for (let character of episode.characters) {
-      if (character.includes("18")) {
+  for (const episode of movies) {
+    for (const character of episode.characters) {
+      if (character.includes('18')) {
         movieCount++;
         break;
       }
