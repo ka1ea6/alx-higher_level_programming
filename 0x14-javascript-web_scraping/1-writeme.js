@@ -2,7 +2,8 @@
 
 const fs = require('fs');
 
-const [_, __, fileName, payload] = process.argv;
+const fileName = process.argv[2];
+const payload = process.argv[3];
 
 const writeToFile = function (filePath, val) {
   try {

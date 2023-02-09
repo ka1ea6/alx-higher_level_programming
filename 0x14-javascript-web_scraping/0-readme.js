@@ -8,13 +8,6 @@ const readContent = function (filePath) {
     return fs.readFileSync(filePath, { encoding: 'utf-8' });
   } catch (err) {
     return err;
-    // return {
-    //   Error: err.ENOENT,
-    //   errno: err.errno,
-    //   code: err.code,
-    //   syscall: err.syscall,
-    //   path: err.path,
-    // };
   }
 };
 

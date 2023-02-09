@@ -5,6 +5,7 @@ const request = require('request');
 const uri = process.argv[2];
 
 request.get(uri, (err, res, body) => {
+  if (err) console.error(err);
   const movies = JSON.parse(body).results;
 
   let movieCount = 0;
